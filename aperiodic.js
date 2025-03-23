@@ -363,7 +363,7 @@
             throw new Error('Interruptor must be a single letter');
         }
 
-        if (!/^[a-zA-Z]+$/.test(key)) {
+        if (!/^[a-zA-Z ]+$/.test(key)) {
             throw new Error('Interruptor Letter Aperiodic requires an alphabetic key');
         }
 
@@ -375,7 +375,7 @@
         let currentAlphabetIndex = 0;
 
         for (const char of text) {
-            if (/[a-zA-Z]/.test(char)) {
+            if (/[a-zA-Z ]/.test(char)) {
                 const isUpperCase = char === char.toUpperCase();
                 const charUpper = char.toUpperCase();
 
@@ -411,7 +411,7 @@
             throw new Error('Interruptor must be a single letter');
         }
 
-        if (!/^[a-zA-Z]+$/.test(key)) {
+        if (!/^[a-zA-Z ]+$/.test(key)) {
             throw new Error('Interruptor Letter Aperiodic requires an alphabetic key');
         }
 
