@@ -7,42 +7,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Aperiodic Cipher Tool</h1>
+     <h1>Aperiodic Cipher Tool</h1>
     <div class="container">
-        <div>
+        <div class="text-area-container">
             <h3>Input Text</h3>
             <textarea id="inputText" placeholder="Enter text to encode or decode..."></textarea>
         </div>
 
         <div class="controls">
-            <select id="algorithmSelect">
-                <option value="wordLength">Word Length Aperiodic</option>
-                <option value="numericallyKeyed">Numerically Keyed Aperiodic</option>
-                <option value="interruptorLetter">Interruptor Letter Aperiodic</option>
-            </select>
+            <div class="select-wrapper">
+                <select id="algorithmSelect">
+                    <option value="wordLength">Word Length Aperiodic</option>
+                    <option value="numericallyKeyed">Numerically Keyed Aperiodic</option>
+                    <option value="interruptorLetter">Interruptor Letter Aperiodic</option>
+                </select>
+            </div>
 
-            <label id="interruptorLabel" for="interruptorInput">Interruptor:</label>
+            <label id="interruptorLabel" for="interruptorInput">Interruptor Letter:</label>
             <input type="text" id="interruptorInput" class="interruptor-input" placeholder="R" maxlength="1">
 
-            <input type="text" id="keyInput" class="key-input" placeholder="Enter key...">
+            <input type="text" id="keyInput" class="key-input" placeholder="Enter encryption key...">
 
-            <button id="encodeBtn">Encode</button>
-            <button id="decodeBtn">Decode</button>
+            <div class="button-group">
+                <button id="encodeBtn">Encode</button>
+                <button id="decodeBtn">Decode</button>
+            </div>
         </div>
 
         <div class="output-container">
             <h3>Output Text</h3>
             <textarea id="outputText" placeholder="Result will appear here..." readonly></textarea>
-            <div id="errorMessage" class="error"></div>
+            <div id="errorMessage" class="error">Error message will appear here</div>
         </div>
 
         <div class="info-section">
             <h3>Algorithm Information</h3>
             <div id="algorithmInfo">
                 <p><strong>Word Length Aperiodic:</strong> Changes alphabet with each word instead of each letter. Uses a sequence of alphabets in rotation, with a new alphabet starting at each word.</p>
+                <p><strong>Numerically Keyed Aperiodic:</strong> Uses a numerical key to determine which alphabet to use for each letter in the message.</p>
+                <p><strong>Interruptor Letter Aperiodic:</strong> Uses a special letter that signals when to change to the next alphabet in the sequence.</p>
             </div>
         </div>
     </div>
+
+
 
     <script src="aperiodic.js"></script>
 </body>
