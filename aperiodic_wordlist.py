@@ -1,7 +1,8 @@
 def decode_letter(letter: str, key: str):
-    if letter.islower():
+    if letter.islower() and key.islower():
         return chr((ord(letter) - ord(key)) % 26 + ord('a'))
-    return chr((ord(letter) - ord(key)) % 26 + ord('A'))
+    elif letter.isupper() and key.islower():
+        return chr((ord(letter) - ord(key.upper())) % 26 + ord('A'))
 
 
 def restart_per_word(key: str, cipher_text: str):
